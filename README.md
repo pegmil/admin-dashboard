@@ -1,2 +1,2 @@
-# Admin-Dashboard
+# admin-dashboard
 Admin Dashboard utilizing Grid
