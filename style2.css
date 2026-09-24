@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 1fr 6fr;
+    gap: 4px;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main-content";
+}
+
+.container div {
+    padding: 15px;
+    font-size: 14px;
+    font-family: Helvetica;
+    font-weight: bold;
+}
+
+.sidebar {
+    background-color: #357EC7;
+    color: white;
+    text-align: left;
+    grid-area: sidebar;
+    display: grid;
+    row-gap: 25px;
+    align-content: start;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "sidebar-head"
+        "sidebar-section1"
+        "sidebar-section2";
+}
+
+.icon-link {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.icon-link:hover {
+    text-decoration: underline;
+}
+
+.sidebar-head {
+    grid-area: sidebar-head;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    color: white;
+}
+
+.sidebar-head span {
+    font-size: 28px;
+}
+
+.display-icon {
+    width: 48px;
+    height: auto;
+    stroke: #357EC7;
+    stroke-width: 0.5px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: white;
+}
+
+.sidebar-section1 {
+    grid-area: sidebar-section1;
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.sidebar-section2 {
+    grid-area: sidebar-section2;
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.header {
+    background-color: white;
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr;
+    /*    grid-template-areas:
+        "header-row1"
+        "header-row2"; */
+}
+
+.main-content {
+    background-color: lightgray;
+    grid-area: main-content;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+        "projects announcements";
+}
+
+.projects-section {
+    /* background-color: #357EC7; */
+    font-family: sans-serif; 
+    padding: 20px;
+    grid-area: projects;
+}
+
+.projects-section h2 {
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+    color: #111;
+    justify-self: start;
+}
+
+.project-card-container {
+    /* background-color: gray; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* justify-content: start; */
+    gap: 24px;
+}
+
+.project-card {
+    background-color: #eef2f7;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border-left: 6px solid goldenrod;
+}
+
+.project-card-content {
+    grid-column: 2;
+    padding-left: 16px;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    /* margin-bottom: 8px; */
+}
+
+.project-card-content h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+    color: #000;
+}
+
+.project-card-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.4;
+    flex-grow: 1;
+}
+
+.project-card-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-top: 16px;
+    margin-left: auto;
+}
+
+.project-card-action-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333333;
+    transition: transform 0.1s ease, color 0.2s ease;
+}
+
+.project-card-action-button svg {
+    color: black;
+    width: 22px;
+    height: 22px;
+}
+
+.project-card-action-button:hover {
+    color: #e2b13c;
+    transform: scale(1.05);
+}
+
+.announcements {
+    background-color: yellow;
+    grid-area: announcements;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 2fr 0.5fr 2fr;
+    gap: 20px;
+    grid-template-areas:
+        "announce-header"
+        "announce-details"
+        "trending-header"
+        "trending"
+}
+
+.announce-header {
+    grid-area: announce-header;
+    display: grid;
+    background-color: yellowgreen;
+    justify-content: start;
+}
+
+.announce-details {
+    grid-area: announce-details;
+    display: grid;
+    background-color: violet;
+    justify-content: start;
+}
+
+.trending-header {
+    grid-area: trending-header;
+    display: grid;
+    background-color: lightgoldenrodyellow;
+    justify-content: start;
+}
+
+.trending-details {
+    grid-area: trending;
+    background-color: orange;
+}
