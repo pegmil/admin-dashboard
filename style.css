@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    gap: 4px;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main-content";
+}
+
+.container div {
+    padding: 15px;
+    font-size: 14px;
+    font-family: Helvetica;
+    font-weight: bold;
+}
+
+.sidebar {
+    background-color: #357EC7;
+    color: white;
+    text-align: left;
+    grid-area: sidebar;
+    display: grid;
+    row-gap: 25px;
+    align-content: start;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "sidebar-head"
+        "sidebar-section1"
+        "sidebar-section2";
+
+}
+
+.icon-link {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.icon-link:hover {
+    text-decoration: underline;
+}
+
+.sidebar-head {
+    grid-area: sidebar-head;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    color: white;
+ }
+
+.sidebar-head span {
+    font-size: 28px;
+}
+
+.display-icon {
+    width: 48px;
+    height: auto;
+    stroke: #357EC7;
+    stroke-width: 0.5px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: white;
+}
+
+.sidebar-section1 {
+    grid-area: sidebar-section1;
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.sidebar-section2 {
+    grid-area: sidebar-section2;
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.header {
+    background-color: rgb(167, 51, 147);
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas:
+        "header-row1"
+        "header-row2";
+}
+
+.header-row1 {
+    background-color: pink;
+    grid-area: header-row1;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+        "searchbar userInfo";
+}
+
+.header-row2 {
+    background-color: green;
+    grid-area: header-row2;
+    grid-template-areas:
+        "userLogin menu-bar";
+}
+
+.searchbar {
+    grid-area: searchbar;
+    display: flex;
+    max-width: 800px;
+    align-items: center;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 15px 10px 40px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 24px;
+    outline: none;
+    background-color: lightgray;
+    transition: all 0.3s ease;
+}
+
+.search-icon {
+    grid-area: searchbar;
+}
+
+.search-button {
+    background-color: gray;
+    grid-area: searchbar;
+}
+
+.userInfo {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    align-items: center;
+    grid-area: userInfo;
+
+}
+
+.notify {
+    stroke: #000000;
+}
+
+.avatar {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+}
+
+.userName {
+    font-size: 16px;
+    color: black;
+    align-items: right;
+}
+
+.userLogin {
+    grid-area: userLogin;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: aqua;
+}
+
+.hello {
+    display: flex;
+}
+
+.menu-bar {
+    background-color: red;
+    grid-area: menu-bar;
+}
+
+.main-content {
+    background-color: lightgray;
+    grid-area: main-content;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+        "projects announcements";
+}
+
+.projects {
+    background-color: darkolivegreen;
+    grid-area: projects;
+}
+
+.announcements {
+    background-color: yellow;
+    grid-area: announcements;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "announce-details"
+        "trending"
+}
+
+.announce-details {
+    background-color: orange;
+}
+
+.trending {
+    background-color: beige;
+    grid-area: announcements;
+}
+
+.svg-icon {
+    stroke: #000000;
+}
