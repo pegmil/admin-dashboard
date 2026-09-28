@@ -99,24 +99,26 @@
     background-color: lightgray;
     grid-area: main-content;
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas:
-        "projects announcements";
-}
+    grid-template-columns: 3fr 1fr;
+    max-width: 1400px;
+ }
 
 .projects-section {
     /* background-color: #357EC7; */
-    font-family: sans-serif; 
-    padding: 20px;
-    grid-area: projects;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    /* font-family: sans-serif; */
+    /* padding: 20px; */
 }
-
+\/*
 .projects-section h2 {
     font-size: 1.25rem;
     margin-bottom: 16px;
     color: #111;
     justify-self: start;
 }
+*/
 
 .project-card-container {
     /* background-color: gray; */
@@ -199,28 +201,100 @@
     grid-area: announcements;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 2fr 0.5fr 2fr;
+    grid-template-rows: 0.5fr 2fr;
     gap: 20px;
     grid-template-areas:
-        "announce-header"
-        "announce-details"
-        "trending-header"
-        "trending"
+        "announcements-card"
+        "trending-card"
 }
 
-.announce-header {
-    grid-area: announce-header;
-    display: grid;
-    background-color: yellowgreen;
-    justify-content: start;
+/* Container card styling */
+.announcements-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+    max-width: 400px;
+    font-family: sans-serif;
 }
 
-.announce-details {
-    grid-area: announce-details;
-    display: grid;
-    background-color: violet;
-    justify-content: start;
+/* Individual list item layout */
+.announcement-item {
+    padding: 16px 0;
+
+    /* This adds the gray separator line under each item */
+    border-bottom: 1px solid #e2e8f0;
 }
+
+/* Adjust padding for the topmost item */
+.announcement-item:first-child {
+    padding-top: 0;
+}
+
+/* This removes the line from the very last item */
+.announcement-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Typography styles */
+.announcement-item h3 {
+    margin: 0 0 8px 0;
+    font-size: 1rem;
+    color: #1a202c;
+    font-weight: 600;
+}
+
+.announcement-item p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #718096;
+    line-height: 1.5;
+}
+
+/*
+.announcements-card-container {
+    background-color: #eef2f7;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border-left: 6px solid goldenrod;
+}
+*/
+/*
+.announcement-card-content {
+    grid-column: 2;
+    padding-left: 16px;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 8px; 
+}
+*/
+
+/*
+.announcement-card-content h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+    color: #000;
+}
+*/
+/*
+.announcement-card-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.4;
+    flex-grow: 1;
+}
+*/
+
 
 .trending-header {
     grid-area: trending-header;
@@ -229,7 +303,7 @@
     justify-content: start;
 }
 
-.trending-details {
-    grid-area: trending;
+.trending-card {
+    grid-area: trending-card;
     background-color: orange;
 }

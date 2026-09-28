@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard-container {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 1fr 6fr;
+    gap: 4px;
+    background-color: yellow;
+ }
+
+.sidebar {
+background-color: blue;
+}
+
+.sidebar-header {
+background-color: aqua;
+}
+        
+.nav-group {
+background-color: aquamarine;
+}
+
+.nav-group settings-group {
+background-color: darkblue;
+}
+
+.header {
+background-color: pink;
+}
+
+.header-top {
+background-color: red;
+}
+
+.search-bar {
+background-color: orange;
+}
+
+.user-profile-top{
+    background-color: palevioletred;
+}
+
+.header-bottom {
+background-color: green;
+}
+
+.user-welcome {
+background-color: greenyellow;
+}
+
+ .menu-buttons {
+background-color: gold;
+ }
+
+.main-content {
+background-color: grey;
+}
+
+.project-grid {
+background-color: white;
+}
+
+.project-card {
+background-color: purple;
+}
+
+.card-actions {
+background-color: violet;
+}
+
+.widgets-sidebar {
+background-color: orchid;
+}
+
+.widget-section {
+background-color: palevioletred;
+}
+
+.widget-card {
+background-color: pink;
+}
+
+.announcement-item {
+background-color: brown;
+}
+
+.trending-item {
+background-color: lightsalmon;
+}
