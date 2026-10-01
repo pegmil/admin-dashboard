@@ -1,69 +1,46 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.container {
-    text-align: center;
+body {
+    background-color: #e2e8f0;
+    /* Light gray background */
+    min-height: 100vh;
+}
+
+/* --- Overall Container Settings  --- */
+.dashboard-container {
     display: grid;
-    grid-template-columns: 1fr 6fr;
-    grid-template-rows: 1fr 6fr;
-    gap: 4px;
-    grid-template-areas:
-        "sidebar header"
-        "sidebar main-content";
+    grid-template-columns: 260px 1fr;
+    grid-template-areas: "sidebar main-content";
 }
 
-.container div {
-    padding: 15px;
-    font-size: 14px;
-    font-family: Helvetica;
-    font-weight: bold;
-}
-
+/* --- LEFT SIDEBAR --- */
 .sidebar {
+    grid-area: sidebar;
     background-color: #357EC7;
     color: white;
-    text-align: left;
-    grid-area: sidebar;
-    display: grid;
-    row-gap: 25px;
-    align-content: start;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        "sidebar-head"
-        "sidebar-section1"
-        "sidebar-section2";
-
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
 }
 
-.icon-link {
-    display: grid;
-    grid-template-columns: auto 1fr;
+.sidebar-header {
+    display: flex;
     align-items: center;
-    gap: 20px;
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 20px;
+    gap: 12px;
+    margin-bottom: 40px;
 }
 
-.icon-link:hover {
-    text-decoration: underline;
+.sidebar-header span {
+    font-size: 1.75rem;
 }
 
-.sidebar-head {
-    grid-area: sidebar-head;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5em;
-    color: white;
- }
-
-.sidebar-head span {
-    font-size: 28px;
-}
-
-.display-icon {
+.logo-icon {
     width: 48px;
     height: auto;
     stroke: #357EC7;
@@ -73,56 +50,82 @@
     fill: white;
 }
 
-.sidebar-section1 {
-    grid-area: sidebar-section1;
-    display: grid;
-    grid-template-columns: auto;
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 10px;
 }
 
-.sidebar-section2 {
-    grid-area: sidebar-section2;
+.icon-link {
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.icon-link:hover {
+    text-decoration: underline;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.settings-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 10px;
+}
+
+/* --- Main Area (Projects/Announcements/Trending) --- */
+.main-content {
+    grid-area: main-content;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .header {
     background-color: white;
-  /*  grid-area: header; */
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 3fr;
-    grid-template-areas:
-        "header-row1"
-        "header-row2";
-}
-
-.header-row1 {
-    background-color: pink;
-    grid-area: header-row1;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas:
-        "searchbar userInfo";
-}
-
-.header-row2 {
-    background-color: green;
-    grid-area: header-row2;
-    grid-template-areas:
-        "userLogin menu-bar";
-}
-
-.searchbar {
-    grid-area: searchbar;
     display: flex;
-    max-width: 800px;
+    flex-direction: column;
+    gap: 24px;
+    z-index: 10;
+    padding: 20px;
+}
+
+.header-top,
+.header-bottom {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    /* padding: 10px; */
+
+}
+
+.search-bar {
+    display: flex;
+    /* max-width: 800px; */
+    width: 60%;
+    align-items: center;
+    gap: 12px;
+    /* flex-grow: 0.5; */
+
 }
 
 .search-input {
     width: 100%;
-    padding: 10px 15px 10px 40px;
-    font-size: 16px;
+    /* padding: 10px 15px 10px 40px; */
+    padding: 8px 16px;
+    font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 24px;
     outline: none;
@@ -130,88 +133,235 @@
     transition: all 0.3s ease;
 }
 
-.search-icon {
-    grid-area: searchbar;
-}
-
 .search-button {
     background-color: gray;
-    grid-area: searchbar;
 }
 
-.userInfo {
-    display: flex;
-    justify-content: flex-end;
-    gap: 20px;
-    align-items: center;
-    grid-area: userInfo;
-
-}
-
-.notify {
-    stroke: #000000;
+.dark-icon {
+    color: black;
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
 }
 
 .avatar {
-    width: 24px;
-    height: 24px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* Makes the image circular */
     object-fit: cover;
+    /* Prevents image distortion */
 }
 
-.userName {
+.user-profile-top {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.username {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 16px;
-    color: black;
-    align-items: right;
+    font-weight: bold;
 }
 
-.userLogin {
-    grid-area: userLogin;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: aqua;
+.user-welcome {
+    display: flex;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    color: black;
 }
 
 .hello {
     display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 5px;
+    font-weight: bold;
 }
 
-.menu-bar {
-    background-color: red;
-    grid-area: menu-bar;
+.hi-there {
+    font-size: 14px;
 }
 
-.main-content {
-    background-color: lightgray;
-    grid-area: main-content;
+.action-buttons {
+    display: flex;
+    gap: 16px;
+
+}
+
+.btn {
+    background-color: #1992d4;
+    color: white;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* --- CONTENT CONTAINER (Projects) --- */
+.content-body {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas:
-        "projects announcements";
+    grid-template-columns: 3fr 1fr;
+    gap: 32px;
+    align-items: start;
+    padding: 20px;
 }
 
-.projects {
-    background-color: darkolivegreen;
-    grid-area: projects;
+.content-body h3 {
+    margin-bottom: 10px;
 }
 
-.announcements {
-    background-color: yellow;
-    grid-area: announcements;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-        "announce-details"
-        "trending"
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
 }
 
-.announce-details {
-    background-color: orange;
+.project-card {
+    background-color: white;
+    padding: 32px 24px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border-left: 8px solid goldenrod;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+    align-items: flex-start;
+    text-align: start;
+    gap: 18px;
 }
 
-.trending {
-    background-color: beige;
-    grid-area: announcements;
+.project-card-content {
+    grid-column: 2;
+    padding-left: 16px;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    color: #1f252c;
 }
 
-.svg-icon {
-    stroke: #000000;
+.card-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-top: 16px;
+    margin-left: auto;
+}
+
+.project-card-action-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333333;
+    transition: transform 0.1s ease, color 0.2s ease;
+}
+
+.project-card-action-button svg {
+    color: black;
+    width: 22px;
+    height: 22px;
+}
+
+.project-card-action-button:hover {
+    color: #e2b13c;
+    transform: scale(1.05);
+}
+
+/* --- SIDEBAR WIDGETS --- */
+.widgets-section {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.widget-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+}
+
+.announcement-item {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 16px 0;
+
+    /* This adds the gray separator line under each item */
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Adjust padding for the topmost item */
+.announcement-item:first-child {
+    padding-top: 0;
+}
+
+/* This removes the line from the very last item */
+.announcement-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Typography styles */
+.announcement-item h5 {
+    margin: 0 0 8px 0;
+    font-size: 1rem;
+    color: #1a202c;
+    font-weight: 600;
+}
+
+.announcement-item p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.3;
+}
+
+.trending-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.trending-item {
+    background-attachment: white;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    padding: 10px 0;
+    align-items: center;
+    gap: 10px;
+}
+
+.trending-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* Makes the image circular */
+    object-fit: cover;
+    /* Prevents image distortion */
+}
+
+.employee-handle {
+    display: flex;
+    font-size: 12px;
+    font-weight: bold;
+    flex-direction: column;
+    text-align: left;
+}
+
+.user-role {
+    font-weight: normal;
+    color: #1f252c;
 }

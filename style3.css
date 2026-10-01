@@ -2,30 +2,32 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
     background-color: #e2e8f0;
     /* Light gray background */
+    min-height: 100vh;
 }
 
 /* Overall Container Settings */
 .dashboard-container {
-    text-align: center;
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: 1fr 6fr;
-    grid-template-areas:
+    grid-template-columns: 1.5fr 3fr;
+    /* grid-template-rows: 1fr 6fr; */
+    /* grid-template-areas:
         "sidebar header header"
-        "sidebar main-content widgets-sidebar";
-    min-height: 100vh;
+        "sidebar main-content widgets-sidebar"; */
+    grid-template-areas: "sidebar main-content";
+    /* text-align: center; */
 }
 
 /* Sidebar Settings */
 .sidebar {
     background-color: #357EC7;
     color: white;
-    text-align: left;
+    /* text-align: left; */
     grid-area: sidebar;
     display: flex;
     flex-direction: column;
@@ -33,12 +35,16 @@ body {
     padding: 20px;
 }
 
+/*  Sidebar Header */
 .sidebar-header {
-    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
 }
 
 .sidebar-header span {
-    font-size: 28px;
+    font-size: 1.75rem;
 }
 
 .logo-icon {
@@ -51,14 +57,17 @@ body {
     fill: white;
 }
 
+/* Sidebar Nav Icons */
 .nav-group {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 16px;
     padding-bottom: 10px;
 
 }
 
+/* Sidebar Settings Icons */
 .settings-group {
     display: flex;
     flex-direction: column;
@@ -86,16 +95,26 @@ body {
     fill: currentColor;
 }
 
-/* Page Header Settings */
+/* Main Content Section */
+.main-content {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+/* Main Content (Page) Header Settings */
 .header {
     background-color: white;
     grid-area: header;
-    padding: 16px 40px;
+    padding: 16px 40px 24px 40px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    z-index: 10;
+    /* justify-content: space-between; */
+    /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); */
+    /* z-index: 10; */
+    gap: 24px;
 }
 
 .header-top,
@@ -103,21 +122,23 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    /* padding: 10px; */
 
 }
 
 .search-bar {
     display: flex;
-    max-width: 800px;
+    /* max-width: 800px; */
+    width: 60%;
     align-items: center;
-    gap: 10px;
-    flex-grow: 0.5;
+    gap: 12px;
+    /* flex-grow: 0.5; */
 }
 
 .search-input {
     width: 100%;
-    padding: 10px 15px 10px 40px;
+    /* padding: 10px 15px 10px 40px; */
+    padding: 8px 16px;
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 24px;
@@ -132,7 +153,7 @@ body {
 
 .user-profile-top {
     display: flex;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
     gap: 20px;
     align-items: center;
 }
@@ -174,10 +195,9 @@ body {
     font-weight: bold;
 }
 
-.hithere {
+.hi-there {
     font-size: 14px;
 }
-
 
 .action-buttons {
     display: flex;
@@ -194,24 +214,37 @@ body {
     cursor: pointer;
 }
 
-/* Main Area (Projects) */
-.main-content {
-    grid-area: main-content;
-    padding: 40px;
+/* Main Content (Projects and Side Widgets (Announcements/Trending) */
+.content-body {
+padding: 40px;
+display: grid;
+grid-template-columns: 3fr 1fr;
+gap: 32px;
+align-items: start;
 }
 
-.main-content h2 {
+.content-body h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+/*
+.project-content {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+.project-content h2 {
     margin-bottom: 20px;
     font-size: 1.2rem;
     text-align: start;
 }
+*/
 
-.project-content {
-    padding: 40px;
-    align-items: start;
-}
-
-.project-grid {
+.projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 24px;
@@ -283,8 +316,11 @@ body {
 }
 
 .widget-section {
-    margin-bottom: 20px;
-    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+ /*   margin-bottom: 20px;
+    font-size: 1.2rem; */
 }
 
 .widget-section h2 {

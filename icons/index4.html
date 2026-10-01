@@ -1,0 +1,227 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Material Symbols for Dashboard Icons -->
+  <link rel="stylesheet" href="https://googleapis.com">
+</head>
+<body>
+
+  <div class="dashboard-container">
+    
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <span class="material-symbols-outlined">dashboard</span>
+        <h1>Dashboard</h1>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="#"><span class="material-symbols-outlined">home</span>Home</a></li>
+          <li><a href="#"><span class="material-symbols-outlined">account_box</span>Profile</a></li>
+          <li><a href="#"><span class="material-symbols-outlined">chat</span>Messages</a></li>
+          <li><a href="#"><span class="material-symbols-outlined">schedule</span>History</a></li>
+          <li><a href="#"><span class="material-symbols-outlined">task</span>Tasks</a></li>
+          <li><a href="#"><span class="material-symbols-outlined">groups</span>Communities</a></li>
+        </ul>
+        
+        <ul class="nav-settings">
+          <li><a href="#"><span class="material-symbols-outlined">settings</span>Settings</a></li>
+          <li><a href="#"><span class="material-symbols-outlined">help</span>Support</a></li>
+          <li><a href="#"><span class="material-symbols-outlined">verified_user</span>Privacy</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- MAIN APP CONTENT AREA -->
+    <div class="main-content">
+      
+      <!-- TOP HEADER -->
+      <header class="header">
+        <div class="header-top">
+          <div class="search-bar">
+            <span class="material-symbols-outlined">search</span>
+            <input type="search" placeholder="Search...">
+          </div>
+          <div class="user-notifications">
+            <span class="material-symbols-outlined">notifications</span>
+            <div class="avatar avatar-sm"></div>
+            <span class="user-name-top">Morgan Oakley</span>
+          </div>
+        </div>
+        
+        <div class="header-bottom">
+          <div class="welcome-message">
+            <div class="avatar avatar-lg"></div>
+            <div>
+              <p class="greeting">Hi there,</p>
+              <h2>Morgan Oakley (@morgan)</h2>
+            </div>
+          </div>
+          <div class="action-buttons">
+            <button class="btn">New</button>
+            <button class="btn">Upload</button>
+            <button class="btn">Share</button>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT GRID (Projects vs Side Widgets) -->
+      <main class="content-body">
+        
+        <!-- PROJECTS SECTION (Left Side) -->
+        <section class="projects-section">
+          <h3>Your Projects</h3>
+          <div class="projects-grid">
+            
+            <!-- Card 1 -->
+            <article class="project-card">
+              <div class="card-content">
+                <h4>Super Cool Project</h4>
+                <p>Sed tempus ut lacus ut scelerisque. Suspendisse sollicitudin nibh erat, id facilisis felis accumsan nec.</p>
+              </div>
+              <div class="card-actions">
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">visibility</span>
+                <span class="material-symbols-outlined">share</span>
+              </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="project-card">
+              <div class="card-content">
+                <h4>Less Cool Project</h4>
+                <p>Nullam condimentum ipsum ut lectus vehicula consectetur. Quisque sed dolor tincidunt, consectetur sapien et, facilisis dolor.</p>
+              </div>
+              <div class="card-actions">
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">visibility</span>
+                <span class="material-symbols-outlined">share</span>
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="project-card">
+              <div class="card-content">
+                <h4>Impossible App</h4>
+                <p>In hac habitasse platea dictumst. Vivamus dictum rutrum arcu, a placerat velit sagittis id.</p>
+              </div>
+              <div class="card-actions">
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">visibility</span>
+                <span class="material-symbols-outlined">share</span>
+              </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="project-card">
+              <div class="card-content">
+                <h4>Easy Peasy App</h4>
+                <p>Etiam cursus eros ac efficitur fringilla. Vestibulum dignissim urna eget accumsan aliquam. Curabitur dignissim nisi in tortor commodo.</p>
+              </div>
+              <div class="card-actions">
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">visibility</span>
+                <span class="material-symbols-outlined">share</span>
+              </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="project-card">
+              <div class="card-content">
+                <h4>Ad Blocker</h4>
+                <p>Quisque eget rutrum nisl. Nam augue justo, cursus vitae metus vel, pharetra hendrerit felis. Aliquam sed malesuada eros.</p>
+              </div>
+              <div class="card-actions">
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">visibility</span>
+                <span class="material-symbols-outlined">share</span>
+              </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="project-card">
+              <div class="card-content">
+                <h4>Money Maker</h4>
+                <p>Praesent convallis, libero quis congue elementum, nunc ante faucibus sapien, ac scelerisque tortor purus sit amet ex.</p>
+              </div>
+              <div class="card-actions">
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">visibility</span>
+                <span class="material-symbols-outlined">share</span>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- RIGHT SIDEBAR WIDGETS (Announcements & Trending) -->
+        <aside class="widgets-section">
+          
+          <!-- Announcements Widget -->
+          <div class="widget-block">
+            <h3>Announcements</h3>
+            <div class="widget-card">
+              <div class="announcement-item">
+                <h5>Site Maintenance</h5>
+                <p>Vestibulum condimentum tellus lacus, in accumsan elit maximus ac...</p>
+              </div>
+              <div class="announcement-item">
+                <h5>Community Share Day</h5>
+                <p>Nam vel lectus tincidunt, rutrum nulla eu, ornare libero. Aliquam dictum...</p>
+              </div>
+              <div class="announcement-item">
+                <h5>Updated Privacy Policy</h5>
+                <p>Phasellus efficitur nisi eget elit consectetur, eget condimentum ante...</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trending Widget -->
+          <div class="widget-block">
+            <h3>Trending</h3>
+            <div class="widget-card trending-list">
+              <div class="trending-item">
+                <div class="avatar avatar-sm avatar-pink"></div>
+                <div>
+                  <span class="trending-handle">@tegan</span>
+                  <span class="trending-desc">World Peace Builder</span>
+                </div>
+              </div>
+              <div class="trending-item">
+                <div class="avatar avatar-sm avatar-gold"></div>
+                <div>
+                  <span class="trending-handle">@morgan</span>
+                  <span class="trending-desc">Super Cool Project</span>
+                </div>
+              </div>
+              <div class="trending-item">
+                <div class="avatar avatar-sm avatar-blue"></div>
+                <div>
+                  <span class="trending-handle">@kendall</span>
+                  <span class="trending-desc">Life Changing App</span>
+                </div>
+              </div>
+              <div class="trending-item">
+                <div class="avatar avatar-sm avatar-teal"></div>
+                <div>
+                  <span class="trending-handle">@alex</span>
+                  <span class="trending-desc">No Traffic Maker</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </aside>
+
+      </main>
+    </div>
+  </div>
+
+</body>
+</html>
