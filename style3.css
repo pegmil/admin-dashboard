@@ -6,14 +6,18 @@
 .dashboard-container {
     text-align: center;
     display: grid;
-    grid-template-columns: 1fr 6fr;
+    grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr 6fr;
     gap: 4px;
     background-color: yellow;
+    grid-template-areas: 
+    "sidebar header header"
+    "sidebar main-content widgets-sidebar";
  }
 
 .sidebar {
 background-color: blue;
+grid-area: sidebar;
 }
 
 .sidebar-header {
@@ -30,6 +34,7 @@ background-color: darkblue;
 
 .header {
 background-color: pink;
+grid-area: header;
 }
 
 .header-top {
@@ -58,6 +63,7 @@ background-color: gold;
 
 .main-content {
 background-color: grey;
+grid-area: main-content;
 }
 
 .project-grid {
@@ -74,6 +80,7 @@ background-color: violet;
 
 .widgets-sidebar {
 background-color: orchid;
+grid-area: widgets-sidebar;
 }
 
 .widget-section {
